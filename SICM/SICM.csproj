@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{196E8F0E-B180-4545-914A-607C8F416797}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SICM</RootNamespace>
+    <AssemblyName>SICM</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.29\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.29\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.29\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\ControlCadCaixa.cs" />
+    <Compile Include="Controller\ControlCadDepartamento.cs" />
+    <Compile Include="Controller\ControlCadMembro.cs" />
+    <Compile Include="Controller\ControlCadVinculo.cs" />
+    <Compile Include="Controller\ControlFrmFinanceiro.cs" />
+    <Compile Include="Controller\ControlFrmListaCaixas.cs" />
+    <Compile Include="Controller\ControlFrmPrincipla.cs" />
+    <Compile Include="Controller\ControlGerenteDepart.cs" />
+    <Compile Include="Controller\ControlGerenteDizimos.cs" />
+    <Compile Include="Controller\ControlGerenteIgreja.cs" />
+    <Compile Include="Controller\ControlGerenteMembro.cs" />
+    <Compile Include="Controller\ControlIgreja.cs" />
+    <Compile Include="DAO\CaixaDAO.cs" />
+    <Compile Include="DAO\ConexaoDAO.cs" />
+    <Compile Include="DAO\DepartamentoDAO.cs" />
+    <Compile Include="DAO\IgrejaDAO.cs" />
+    <Compile Include="DAO\MembroDB.cs" />
+    <Compile Include="DAO\VinculoDAO.cs" />
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DomainsExcpetion.cs" />
+    <Compile Include="Entidades\Caixa.cs" />
+    <Compile Include="Entidades\Cargo.cs" />
+    <Compile Include="Entidades\Congregacao.cs" />
+    <Compile Include="Entidades\DadosEsp.cs" />
+    <Compile Include="Entidades\DadosPessoais.cs" />
+    <Compile Include="Entidades\Departamento.cs" />
+    <Compile Include="Entidades\Dizimo.cs" />
+    <Compile Include="Entidades\Endereco.cs" />
+    <Compile Include="Entidades\Entrada.cs" />
+    <Compile Include="Entidades\Enumeracoes\ListaMeses.cs" />
+    <Compile Include="Entidades\Enumeracoes\NaturezaMovimentacao.cs" />
+    <Compile Include="Entidades\Enumeracoes\StatusCargo.cs" />
+    <Compile Include="Entidades\Enumeracoes\StatusMembro.cs" />
+    <Compile Include="Entidades\Enumeracoes\StatusRelatorioDizimo.cs" />
+    <Compile Include="Entidades\Enumeracoes\StatusVinculo.cs" />
+    <Compile Include="Entidades\Enumeracoes\SubCategoria.cs" />
+    <Compile Include="Entidades\Enumeracoes\TipoCaixa.cs" />
+    <Compile Include="Entidades\Enumeracoes\TipoCategoria.cs" />
+    <Compile Include="Entidades\Enumeracoes\TipoDizimo.cs" />
+    <Compile Include="Entidades\Enumeracoes\TipoEscolaridade.cs" />
+    <Compile Include="Entidades\Enumeracoes\TipoEstCivil.cs" />
+    <Compile Include="Entidades\Enumeracoes\TipoGenero.cs" />
+    <Compile Include="Entidades\Enumeracoes\TipoMovimentacao.cs" />
+    <Compile Include="Entidades\Igreja.cs" />
+    <Compile Include="Entidades\Membro.cs" />
+    <Compile Include="Entidades\Saida.cs" />
+    <Compile Include="Entidades\Templo.cs" />
+    <Compile Include="Entidades\VinculoFuncional.cs" />
+    <Compile Include="FrmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenuPrincipal.Designer.cs">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\FrmCartaMembro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FrmCartaMembro.Designer.cs">
+      <DependentUpon>FrmCartaMembro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmPrestacaoContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FrmPrestacaoContas.Designer.cs">
+      <DependentUpon>FrmPrestacaoContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelCaixa.Designer.cs">
+      <DependentUpon>FrmRelCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelDizimistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelDizimistas.Designer.cs">
+      <DependentUpon>FrmRelDizimistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelMembros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelMembros.Designer.cs">
+      <DependentUpon>FrmRelMembros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelFichaMembro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelFichaMembro.Designer.cs">
+      <DependentUpon>FrmRelFichaMembro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelVinculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelVinculos.Designer.cs">
+      <DependentUpon>FrmRelVinculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FrmReportListaCaixas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FrmReportListaCaixas.Designer.cs">
+      <DependentUpon>FrmReportListaCaixas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Servicos\IBJEService.cs" />
+    <Compile Include="Servicos\ObjectService.cs" />
+    <Compile Include="Servicos\TransfereService.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="SubForms\FrmCadCaixas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FrmCadCaixas.Designer.cs">
+      <DependentUpon>FrmCadCaixas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\FrmCadDepartCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FrmCadDepartCargo.Designer.cs">
+      <DependentUpon>FrmCadDepartCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\FrmCadIgreja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FrmCadIgreja.Designer.cs">
+      <DependentUpon>FrmCadIgreja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\FrmCadMembro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FrmCadMembro.Designer.cs">
+      <DependentUpon>FrmCadMembro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\FrmCadVinculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FrmCadVinculo.Designer.cs">
+      <DependentUpon>FrmCadVinculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\FrmDizimos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FrmDizimos.Designer.cs">
+      <DependentUpon>FrmDizimos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\FrmFinanceiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FrmFinanceiro.Designer.cs">
+      <DependentUpon>FrmFinanceiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\FrmGerenciaMembros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FrmGerenciaMembros.Designer.cs">
+      <DependentUpon>FrmGerenciaMembros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\FrmGerenteDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FrmGerenteDepartamento.Designer.cs">
+      <DependentUpon>FrmGerenteDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\FrmGerenteIgrejas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FrmGerenteIgrejas.Designer.cs">
+      <DependentUpon>FrmGerenteIgrejas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\FrmListaCaixas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\FrmListaCaixas.Designer.cs">
+      <DependentUpon>FrmListaCaixas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForms\testeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForms\testeFrm.Designer.cs">
+      <DependentUpon>testeFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Relatorios\FrmCartaMembro.resx">
+      <DependentUpon>FrmCartaMembro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmPrestacaoContas.resx">
+      <DependentUpon>FrmPrestacaoContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmRelCaixa.resx">
+      <DependentUpon>FrmRelCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmRelDizimistas.resx">
+      <DependentUpon>FrmRelDizimistas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmRelMembros.resx">
+      <DependentUpon>FrmRelMembros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmRelFichaMembro.resx">
+      <DependentUpon>FrmRelFichaMembro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmRelVinculos.resx">
+      <DependentUpon>FrmRelVinculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmReportListaCaixas.resx">
+      <DependentUpon>FrmReportListaCaixas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\rdlcFiles\FichaMembro.rdlc" />
+    <EmbeddedResource Include="Relatorios\rdlcFiles\RelatorioGeralCaixas.rdlc" />
+    <EmbeddedResource Include="Relatorios\rdlcFiles\RelCartaMembro.rdlc" />
+    <EmbeddedResource Include="Relatorios\rdlcFiles\RelEntradasSaidas.rdlc" />
+    <EmbeddedResource Include="Relatorios\rdlcFiles\RelListaDizimistas.rdlc" />
+    <EmbeddedResource Include="Relatorios\rdlcFiles\RelListaMembros.rdlc" />
+    <EmbeddedResource Include="Relatorios\rdlcFiles\RelVinculos.rdlc" />
+    <EmbeddedResource Include="Relatorios\rdlcFiles\Prestacao.rdlc" />
+    <EmbeddedResource Include="SubForms\FrmCadCaixas.resx">
+      <DependentUpon>FrmCadCaixas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\FrmCadDepartCargo.resx">
+      <DependentUpon>FrmCadDepartCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\FrmCadIgreja.resx">
+      <DependentUpon>FrmCadIgreja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\FrmCadMembro.resx">
+      <DependentUpon>FrmCadMembro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\FrmCadVinculo.resx">
+      <DependentUpon>FrmCadVinculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\FrmDizimos.resx">
+      <DependentUpon>FrmDizimos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\FrmFinanceiro.resx">
+      <DependentUpon>FrmFinanceiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\FrmGerenciaMembros.resx">
+      <DependentUpon>FrmGerenciaMembros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\FrmGerenteDepartamento.resx">
+      <DependentUpon>FrmGerenteDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\FrmGerenteIgrejas.resx">
+      <DependentUpon>FrmGerenteIgrejas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\FrmListaCaixas.resx">
+      <DependentUpon>FrmListaCaixas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\testeFrm.resx">
+      <DependentUpon>testeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excluir.png" />
+    <None Include="Resources\NOVO.png" />
+    <None Include="Resources\editarBtn.png" />
+    <None Include="Resources\atualizar.png" />
+    <None Include="Resources\pesquisaInfo.png" />
+    <None Include="Resources\icons8-impressora-321.png" />
+    <None Include="Resources\icons8-pesquisar-mais-321.png" />
+    <None Include="Resources\icons8-impressora-32.png" />
+    <None Include="Resources\icons8-pesquisar-mais-32.png" />
+    <None Include="Resources\FECHAR.png" />
+    <None Include="Resources\MINIMIZAR.png" />
+    <None Include="Resources\SelecionarImagem.png" />
+    <None Include="Resources\EDITAR.png" />
+    <None Include="Resources\SALVAR01.png" />
+    <None Include="Resources\IGREJA96.png" />
+    <None Include="Resources\CAIXA.png" />
+    <None Include="Resources\DP.png" />
+    <None Include="Resources\REPORTS.png" />
+    <None Include="Resources\MEMBROS.png" />
+    <None Include="Resources\IGREJA72.png" />
+    <None Include="Resources\leadership_group_people_icon_148368.png" />
+    <None Include="Resources\lixeiraMembro.png" />
+    <None Include="Resources\PrintFicha.png" />
+    <None Include="Resources\Carta.png" />
+    <None Include="Resources\Pesquisa.png" />
+    <None Include="Resources\ImagemMembro.png" />
+    <None Include="Resources\FILTROS.png" />
+    <None Include="Resources\OPÇOES.png" />
+    <None Include="Resources\LUPA.png" />
+    <None Include="Resources\InfoMembro.png" />
+    <None Include="Resources\PrintRelaMembro.png" />
+    <None Include="Resources\icons8-editar-ligação-32.png" />
+    <None Include="Resources\icons8-expand-32.png" />
+    <None Include="Resources\fluxo-de-caixa.png" />
+    <None Include="Resources\fluxo-de-caixa02.png" />
+    <None Include="Resources\icons8-fluxo-de-caixa-48.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DEPARTAMENTO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FINANCAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IGREJAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\membros2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\relatorioPrint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnCancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lixeira.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\real.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
