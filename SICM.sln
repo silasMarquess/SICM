@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33502.453
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SICM", "SICM\SICM.csproj", "{196E8F0E-B180-4545-914A-607C8F416797}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IEADBM", "IEADBM\IEADBM.vdproj", "{4260BC89-8734-4DBD-B997-AD47BCA11F9E}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup01Principal", "Setup01Principal\Setup01Principal.vdproj", "{91E3E2F0-CC14-4194-AB60-E5F35256C58A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{196E8F0E-B180-4545-914A-607C8F416797}.Release|Any CPU.Build.0 = Release|Any CPU
 		{196E8F0E-B180-4545-914A-607C8F416797}.Release|x86.ActiveCfg = Release|x86
 		{196E8F0E-B180-4545-914A-607C8F416797}.Release|x86.Build.0 = Release|x86
-		{4260BC89-8734-4DBD-B997-AD47BCA11F9E}.Debug|Any CPU.ActiveCfg = Debug
-		{4260BC89-8734-4DBD-B997-AD47BCA11F9E}.Debug|x86.ActiveCfg = Debug
-		{4260BC89-8734-4DBD-B997-AD47BCA11F9E}.Release|Any CPU.ActiveCfg = Release
-		{4260BC89-8734-4DBD-B997-AD47BCA11F9E}.Release|x86.ActiveCfg = Release
+		{91E3E2F0-CC14-4194-AB60-E5F35256C58A}.Debug|Any CPU.ActiveCfg = Debug
+		{91E3E2F0-CC14-4194-AB60-E5F35256C58A}.Debug|x86.ActiveCfg = Debug
+		{91E3E2F0-CC14-4194-AB60-E5F35256C58A}.Release|Any CPU.ActiveCfg = Release
+		{91E3E2F0-CC14-4194-AB60-E5F35256C58A}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -303,7 +303,6 @@ C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\bin\Debug\pt\Microsoft.Repo
 C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\obj\Debug\SICM.csproj.AssemblyReference.cache
 C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\obj\Debug\SICM.FrmMenuPrincipal.resources
 C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\obj\Debug\SICM.Properties.Resources.resources
 C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\obj\Debug\SICM.Relatorios.FrmCartaMembro.resources
@@ -331,3 +330,4 @@ C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\obj\Debug\SICM.csproj.CoreC
 C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\obj\Debug\SICM.csproj.CopyComplete
 C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\obj\Debug\SICM.exe
 C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\obj\Debug\SICM.pdb
+C:\Users\silas\OneDrive\Documentos\SICM - Copia\SICM\obj\Debug\SICM.csproj.AssemblyReference.cache
